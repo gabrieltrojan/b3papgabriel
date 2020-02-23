@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="images/logos-n-icons/favs/mini.ico">
+	<title>PresenStation</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script>
+		$( function() {
+			$( "#dialog, #dialog2, #dialog3" ).dialog({
+				autoOpen: false,
+				maxWidth:230,
+				maxHeight: 110,
+				width: 230,
+				height: 110,
+				show: {
+					effect: "fade",
+					duration: 1000
+				},
+				hide: {
+					effect: "fade",
+					duration: 1000
+				}
+			});
+
+			$( "#opener" ).on( "click", function() {
+				$( "#dialog" ).dialog( "open" );
+			});
+
+			$( "#dialog" ).css({
+				"background-color": "#eeeeee"
+			});
+		} );
+	</script>
+</head>
+<body class="home tp">
+	<header>
+		<div class="site-id">
+			<a href="index.html" style="max-height:124px">
+				<img class="logo" src="images/logos-n-icons/logo.png" alt="PresenStation" onmouseover="this.src='images/logos-n-icons/logogif.gif';" onmouseout="this.src='images/logos-n-icons/logo.png';"></a>
+			</div>
+			<a href="#main-menu" class="menu-toggle">
+				<div class="burger-breads">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</a>
+			<nav id="main-menu" class="main-menu">
+				<a href="#main-menu-toggle" class="menu-close">
+					<div class="burger-breads close">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</a>
+				<ul>
+					<li><a class="ap" href="connexion.html" title="Connexion"><i class="fa fa-2x fa-user"></i></a></li>
+					<li><a class="ap" href="premium.html" title="Devenir Premium"><i class="fa fa-2x fa-star"></i></a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<div class="pricingTable">
+			<h2 class="pricingTable-title">Trouvez le pack qui vous convient.</h2>
+			<h3 class="pricingTable-subtitle">Chaque pack est livré avec un essai gratuit de 30 jours.</h3>
+
+			<ul class="pricingTable-firstTable">
+				<li class="pricingTable-firstTable_table">
+					<h1 class="pricingTable-firstTable_table__header">Standard</h1>
+					<p class="pricingTable-firstTable_table__pricing"><span>€</span><span>5</span><span>Mois</span></p>
+					<ul class="pricingTable-firstTable_table__options">
+						<li>Temps illimité</li>
+						<li>Caractères illimités</li>
+						<li>Correction améliorée</li>
+						<li>Support de documents</li>
+					</ul>
+					<div class="pricingTable-firstTable_table__getstart text-uppercase">Démarrer</div>
+				</li><li class="pricingTable-firstTable_table">
+					<h1 class="pricingTable-firstTable_table__header">Pro</h1>
+					<p class="pricingTable-firstTable_table__pricing"><span>€</span><span>9</span><span>Mois</span></p>
+					<ul class="pricingTable-firstTable_table__options">
+						<li>Temps illimité</li>
+						<li>Caractères illimités</li>
+						<li>Correction améliorée</li>
+						<li>Support de documents</li>
+						<li>Enregistrer les projets</li>
+						<li>Travailler en groupe</li>
+						<li>Service d'assistance 24/7</li>
+					</ul>
+					<div class="pricingTable-firstTable_table__getstart text-uppercase">Démarrer</div>
+				</li>
+			</ul>
+		</div>
+
+		<div id="dialog" title="INFORMATIONS">
+			<nav>
+				<ul>
+					<li><a href="">Mentions légales</a></li>
+					<li><a href="">Conditions d'utilisation</a></li>
+					<li><a href="">Contactez-nous</a></li>
+				</ul>
+			</nav>
+		</div>
+
+		<footer>
+			<div class="informations" id="opener">
+				<img class="mini" src="images/logos-n-icons/mini.png" title="INFORMATIONS" onmouseover="this.src='images/logos-n-icons/minigif.gif';" onmouseout="this.src='images/logos-n-icons/mini.png';"></a>
+			</div>
+			<div class="reseaux">
+				<a href="https://www.facebook.com" title="Facebook" style="text-decoration: none;">
+					<img style="width:50px; height:50px;" src="images/fb.png" alt="Facebook" 
+					onmouseover="this.src='images/fbhover.png';" onmouseout="this.src='images/fb.png';">
+				</a>
+				<a href="https://twitter.com" title="Twitter" style="text-decoration: none;">
+					<img style="width:50px; height:50px;" src="images/twitter.png" alt="Twitter" 
+					onmouseover="this.src='images/twitterhover.png';" onmouseout="this.src='images/twitter.png';">
+				</a>
+				<a href="https://www.whatsapp.com" title="WhatsApp" style="text-decoration: none;">
+					<img style="width:50px; height:50px;" src="images/whatsapp.png" alt="WhatsApp" 
+					onmouseover="this.src='images/whatsapphover.png';" onmouseout="this.src='images/whatsapp.png';">
+				</a>
+				<a href="https://www.youtube.com" title="YouTube" style="text-decoration: none;">
+					<img style="width:50px; height:50px;" src="images/yt.png" alt="YouTube" 
+					onmouseover="this.src='images/ythover.png';" onmouseout="this.src='images/yt.png';">
+				</a>
+				<a href="https://www.instagram.com" title="Instagram" style="text-decoration: none;">
+					<img style="width:50px; height:50px;" src="images/insta.png" alt="Instagram" 
+					onmouseover="this.src='images/instahover.png';" onmouseout="this.src='images/insta.png';">
+				</a>
+				<a href="https://linkedin.com" title="LinkedIn" style="text-decoration: none;">
+					<img style="width:50px; height:50px;" src="images/linkedin.png" alt="LinkedIn" 
+					onmouseover="this.src='images/linkedinhover.png';" onmouseout="this.src='images/linkedin.png';">
+				</a>
+			</div>
+		</footer>
+	</body>
+	</html>

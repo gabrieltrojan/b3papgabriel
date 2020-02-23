@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="images/logos-n-icons/favs/mini.ico">
+	<title>PresenStation</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script>
+		$( function() {
+			$( "#dialog, #dialog2, #dialog3" ).dialog({
+				autoOpen: false,
+				maxWidth:230,
+				maxHeight: 110,
+				width: 230,
+				height: 110,
+				show: {
+					effect: "fade",
+					duration: 1000
+				},
+				hide: {
+					effect: "fade",
+					duration: 1000
+				}
+			});
+
+			$( "#opener" ).on( "click", function() {
+				$( "#dialog" ).dialog( "open" );
+			});
+
+			$( "#dialog" ).css({
+				"background-color": "#eeeeee"
+			});
+		} );
+	</script>
+</head>
+<body class="home t2">
+	<header>
+		<div class="site-id">
+			<a href="index.html" style="max-height:124px">
+				<img class="logo" src="images/logos-n-icons/logo.png" alt="PresenStation" onmouseover="this.src='images/logos-n-icons/logogif.gif';" onmouseout="this.src='images/logos-n-icons/logo.png';"></a>
+			</div>
+			<a href="#main-menu" class="menu-toggle">
+				<div class="burger-breads">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</a>
+			<nav id="main-menu" class="main-menu">
+				<a href="#main-menu-toggle" class="menu-close">
+					<div class="burger-breads close">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</a>
+				<ul>
+					<li><a class="a2" href="connexion.html" title="Connexion"><i class="fa fa-2x fa-user"></i></a></li>
+					<li><a class="a2" href="premium.html" title="Devenir Premium"><i class="fa fa-2x fa-star"></i></a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<div id="wrapper"> 
+			<div id="page-wrapper">
+				<div class="panel panel-default" style="border: none;-webkit-box-shadow:none;box-shadow:none;" id="text-box-wrapper">
+					<div id="voice-commands-header" class="panel-heading text-center" style="position: relative; border: 1px solid #ddd; border-bottom: none;">
+						<a href="javascript:void(0)" data-toggle="tooltip" title="Commandes vocales" id="voice-commands" tabindex="4"><i class="fa fa-2x fa-info-circle"></i></a>
+						<h4 style="font-weight: bold">Fais ta présentation</h4>
+						<i id="microphone" class="fa fa-3x fa-microphone animated" style="display: none"></i>
+						<div class="pull-right">
+							<ul class="nav navbar-top-links" style="margin-left: 10px">
+								<li class="dropdown">
+
+									<a class="dropdown-toggle" data-toggle="dropdown" href="#" tabindex="3" id="lg">
+
+										<img class="country-flag" src="flags/FR.svg" alt='' style='width:50px;'>
+										<i class="fa fa-2x fa-caret-down" style='transform:translateY(25%);'></i>
+									</a>
+
+									<ul class="dropdown-menu">
+
+										<li style="display: block; cursor: pointer;" id='EN'>
+											<!-- <a href="../../en/voice-to-text/index.html" tabindex="-1"> -->
+
+												<img class="country-flag" src="flags/EN.svg" alt=''>
+											Anglais</a>
+										</li>
+
+										<li style="display: block; cursor: pointer;" id='DE'>
+											<!-- <a href="../../de/voice-to-text/index.html" tabindex="-1"> -->
+
+												<img class="country-flag" src="flags/DE.svg" alt=''>
+											Allemand</a>
+										</li>
+
+										<li style="display: block; cursor: pointer;" id='ES'>
+											<!-- <a href="../../es/voice-to-text/index.html" tabindex="-1"> -->
+
+												<img class="country-flag" src="flags/ES.svg" alt=''>
+											Espagnol</a>
+										</li>
+
+										<li style="display: block; cursor: pointer;" id='IT'>
+											<!-- <a href="../../it/voice-to-text/index.html" tabindex="-1"> -->
+
+												<img class="country-flag" src="flags/IT.svg" alt=''>
+											Italien</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<div class="button-controls text-left">
+							<a tabindex="1" id="toggle-dictation" href="javascript:void(0)" data-toggle="tooltip" title="Commencer à dicter" data-title-toggled="Arrêter de dicter"><i class="fa fa-4x fa-play-circle"></i></a>
+							<a tabindex="1" id="clear-content" href="javascript:void(0)" data-toggle="tooltip" title="Effacer le contenu"><i class="fa fa-4x fa-times-circle"></i></a>
+						</div>
+						<div class="clearfix" style="margin-top: 15px;"></div>
+						<div style='margin-top: 15px; display: none'>
+							<audio controls id="audio-control" class="text-left" style="width: 100%;" tabindex="5"></audio>
+							<div class="clearfix"></div>
+							<div style="margin-bottom: 10px; margin-top: 5px;">
+								<div class="col-sm-2 text-left"><label>Vitesse:</label></div>
+								<div class="col-sm-10"><input id="audio-rate" type="range" step="0.1" min="0.5" max="2" value="0.8" tabindex="5"/></div>
+								<div class="clearfix"></div>
+							</div>
+							<input type="file" id="select-file" style="display: inline-block;" tabindex="5"/>
+						</div>
+					</div>
+					<div class="panel-body" id="text-box-container">
+						<span id="text-box" contenteditable="true" style="border: 1px solid #ddd;" tabindex="5">
+						</span>
+					</div>
+				</div>
+				<div id="voice-commands-content" style="display: none">
+					<table class="table table-bordered">
+						<tr><th>Prononcez</th><th>Obtenez</th></tr>
+
+						<tr><td>Point</td><td>.</td></tr>
+
+						<tr><td>Virgule</td><td>,</td></tr>
+
+						<tr><td>Point-virgule</td><td>;</td></tr>
+
+						<tr><td>Deux-points</td><td>:</td></tr>
+
+						<tr><td>Tiret, Trait d’union</td><td>-</td></tr>
+
+						<tr><td>Point d&#39;interrogation</td><td>?</td></tr>
+
+						<tr><td>Point d&#39;exclamation</td><td>!</td></tr>
+
+						<tr><td>Parenthèse ouverte</td><td>(</td></tr>
+
+						<tr><td>Parenthèse fermée</td><td>)</td></tr>
+
+						<tr><td>Nouvelle ligne, Entrer</td><td>↵</td></tr>
+
+						<tr><td>Nouveau paragraphe</td><td>↵↵</td></tr>
+
+					</table>
+				</div>
+
+			</div>
+		</div>
+		
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+
+		<script src="../js/recorder.min.js"></script>
+
+
+		<script src="../js/jquery-ui.min.js"></script>
+		<script src="../js/clipboard.min.js"></script>
+		<script>
+			var LANGUAGES = {en: 'en-US',de: 'de-DE',es: 'es-ES',it: 'it-IT',fr: 'fr-FR'}
+			var SYMBOLS = {
+
+				'.': [
+
+				"Point"
+
+				]
+
+
+				, 
+
+				',': [
+
+				"Virgule"
+
+				]
+
+
+				, 
+
+				';': [
+
+				"Point-virgule"
+
+				]
+
+
+				, 
+
+				':': [
+
+				"Deux-points"
+
+				]
+
+
+				, 
+
+				'-': [
+
+				"Tiret"
+
+				, 
+
+
+				"Trait d’union"
+
+				]
+
+
+				, 
+
+				'?': [
+
+				"Point d&#39;interrogation"
+
+				]
+
+
+				, 
+
+				'!': [
+
+				"Point d&#39;exclamation"
+
+				]
+
+
+				, 
+
+				'(': [
+
+				"Parenthèse ouverte"
+
+				]
+
+
+				, 
+
+				')': [
+
+				"Parenthèse fermée"
+
+				]
+
+
+				, 
+
+				'↵': [
+
+				"Nouvelle ligne"
+
+				, 
+
+
+				"Entrer"
+
+				]
+
+
+				, 
+
+				'↵↵': [
+
+				"Nouveau paragraphe"
+
+				]
+
+
+
+			};
+			var CURRENT_LANGUAGE = 'fr';
+			if (typeof writer != 'undefined'){
+				writer.onerror = function(e) {
+					console.log(e.error);
+					var msg = 'Une erreur s\u0027est produite. Veuillez recharger la page.';
+					if (e.error === 'no-speech') {
+						msg = 'La voix ne peut pas être détectée. Allumez le microphone et réessayez.';
+					} else if (e.error === 'audio-capture') {
+						msg ='Assurez\u002Dvous que votre microphone est connecté à l\u0027ordinateur et qu\u0027il est allumé.';
+					} else if (e.error === 'not-allowed') {
+						msg = 'Impossible d\u0027accéder à votre microphone. Accédez à chrome:////settings/contentExceptions#media\u002Dstream et autorisez l\u0027accès du microphone à ce site.';
+					}
+					if (e.error == 'network'){
+						try{
+							is_stopped = true;
+							writer.start();
+						}
+						catch(e){}
+					}
+					else{
+						$('#alert-text').text(msg).parent('#alert').show();
+					}
+
+				};
+			}
+			else{
+				$(function(){$('#alert-text').text('La reconnaissance vocale n\u0027est pas supportée pour cette version du navigateur. Veuillez la mettre à jour. Nous vous recommandons d\u0027utiliser la dernière version de Chrome. Vous pouvez toujours utiliser l\u0027éditeur pour sauvegarder le texte.').parent('#alert').show()});
+
+			}
+		</script>
+		<script>
+			$('.dropdown-menu li').on('click',function(){
+				var lang = $(this).attr('id');
+				document.getElementById('lg').innerHTML = '<img class="country-flag" src="flags/'+lang+'.svg" alt=\'\' style=\'width:50px;\'>				<i class="fa fa-2x fa-caret-down" style=\'transform:translateY(25%);\'></i>';
+				CURRENT_LANGUAGE = lang.toLowerCase();
+				console.log(CURRENT_LANGUAGE);
+			});
+
+			$('.dropdown-menu li').on('click',function(){
+				console.log('out : '+CURRENT_LANGUAGE);
+			});
+		</script>
+		<script src="../js/v2t.min3661.js?v=2.0"></script>
+
+		<div id="dialog" title="INFORMATIONS">
+			<nav>
+				<ul>
+					<li><a href="">Mentions légales</a></li>
+					<li><a href="">Conditions d'utilisation</a></li>
+					<li><a href="">Contactez-nous</a></li>
+				</ul>
+			</nav>
+		</div>
+
+		<footer>
+			<div class="informations" id="opener">
+				<img class="mini" src="images/logos-n-icons/mini.png" title="INFORMATIONS" onmouseover="this.src='images/logos-n-icons/minigif.gif';" onmouseout="this.src='images/logos-n-icons/mini.png';"></a>
+			</div>
+			<div class="reseaux">
+				<a href="https://www.facebook.com" title="Facebook" style="text-decoration: none;">
+					<img style="width:50px; height:50px;" src="images/fb.png" alt="Facebook" 
+					onmouseover="this.src='images/fbhover.png';" onmouseout="this.src='images/fb.png';">
+				</a>
+				<a href="https://twitter.com" title="Twitter" style="text-decoration: none;">
+					<img style="width:50px; height:50px;" src="images/twitter.png" alt="Twitter" 
+					onmouseover="this.src='images/twitterhover.png';" onmouseout="this.src='images/twitter.png';">
+				</a>
+				<a href="https://www.whatsapp.com" title="WhatsApp" style="text-decoration: none;">
+					<img style="width:50px; height:50px;" src="images/whatsapp.png" alt="WhatsApp" 
+					onmouseover="this.src='images/whatsapphover.png';" onmouseout="this.src='images/whatsapp.png';">
+				</a>
+				<a href="https://www.youtube.com" title="YouTube" style="text-decoration: none;">
+					<img style="width:50px; height:50px;" src="images/yt.png" alt="YouTube" 
+					onmouseover="this.src='images/ythover.png';" onmouseout="this.src='images/yt.png';">
+				</a>
+				<a href="https://www.instagram.com" title="Instagram" style="text-decoration: none;">
+					<img style="width:50px; height:50px;" src="images/insta.png" alt="Instagram" 
+					onmouseover="this.src='images/instahover.png';" onmouseout="this.src='images/insta.png';">
+				</a>
+				<a href="https://linkedin.com" title="LinkedIn" style="text-decoration: none;">
+					<img style="width:50px; height:50px;" src="images/linkedin.png" alt="LinkedIn" 
+					onmouseover="this.src='images/linkedinhover.png';" onmouseout="this.src='images/linkedin.png';">
+				</a>
+			</div>
+		</footer>
+	</body>
+	</html>

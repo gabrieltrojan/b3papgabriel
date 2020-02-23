@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Hind&display=swap');
+@font-face {
+	font-family: "HorizonRounded";
+	src: url('HorizonRounded.otf');
+}
+
+body {
+	font-family: 'Hind', sans-serif;
+}
+
+p {
+	margin-bottom: 20px;
+	text-align: justify;
+  	text-justify: inter-word;
+}
+
+h1, h2, h3 {
+	margin: 30px 0 30px;
+	font-family: 'HorizonRounded';
+    color: #000000;
+}
+
+h1 {
+  	font-size: 4em;
+	text-align: center;
+}
+
+h2 {
+	font-size: 3em;
+}
+
+h3 {
+	font-size: 2em;
+	text-align: center;
+}
+
+h4 {
+	font-size: 1em;
+	text-align: center;
+}
+
+h5 {}

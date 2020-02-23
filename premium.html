@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="images/logos-n-icons/favs/mini.ico">
+	<title>PresenStation</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script>
+		$( function() {
+			$( "#dialog, #dialog2, #dialog3" ).dialog({
+				autoOpen: false,
+				maxWidth:230,
+				maxHeight: 110,
+				width: 230,
+				height: 110,
+				show: {
+					effect: "fade",
+					duration: 1000
+				},
+				hide: {
+					effect: "fade",
+					duration: 1000
+				}
+			});
+
+			$( "#opener" ).on( "click", function() {
+				$( "#dialog" ).dialog( "open" );
+			});
+
+			$( "#dialog" ).css({
+				"background-color": "#eeeeee"
+			});
+		} );
+	</script>
+</head>
+<body class="home tp">
+	<header>
+		<div class="site-id">
+			<a href="index.html" style="max-height:124px">
+				<img class="logo" src="images/logos-n-icons/logo.png" alt="PresenStation" onmouseover="this.src='images/logos-n-icons/logogif.gif';" onmouseout="this.src='images/logos-n-icons/logo.png';"></a>
+			</div>
+			<a href="#main-menu" class="menu-toggle">
+				<div class="burger-breads">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</a>
+			<nav id="main-menu" class="main-menu">
+				<a href="#main-menu-toggle" class="menu-close">
+					<div class="burger-breads close">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</a>
+				<ul>
+					<li><a class="ap" href="connexion.html" title="Connexion"><i class="fa fa-2x fa-user"></i></a></li>
+					<li><a class="ap" href="premium.html" title="Devenir Premium"><i class="fa fa-2x fa-star"></i></a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<section class="teaser-list">
+			<div class="product-list-item">
+				<figure>
+					<h3>PLUS AUCUNE LIMITE !</h3>
+					<img src="images/th/livres.jpg" alt="">
+					<p>Effectivement ! Grâce à l’accès premium, tu n’auras plus de limite de caractères et tu disposeras du temps que tu souhaites pour le timer. Tu pourras également stocker tes différents projets et travailler sur le projet de ton choix quand tu le souhaites.</p>
+				</figure>
+			</div>
+
+			<div class="product-list-item">
+				<figure>
+					<h3>+ DE FONCTIONNALITÉS</h3>
+					<img src="images/th/cafe.jpg" alt="">
+					<p>Tu disposeras de fonctions plus puissantes qui t’aiderons à progresser encore plus efficacement pour tes présentations ! Finis les tics de langage ou les blancs dans tes phrases : tu vas pouvoir faire des présentations dignes d’un maître !</p>
+				</figure>
+			</div>
+
+			<div class="product-list-item">
+				<figure>
+					<h3>SUPPORT DE DOCUMENTS</h3>
+					<img src="images/th/jeux.jpg" alt="">
+					<p>Avec le support, tu vas pouvoir mettre un fichier powerpoint, pdf ou plein d’autres formats ! Cela te permettra de focus directement sur ta présentation lorsque tu lanceras le timer, afin d’avoir un résultat encore plus précis sur le temps que tu as mis ! </p>
+				</figure>
+			</div>
+
+		</section>
+
+		<h1><a class="ap" href="premium-1.html">DEVENIR PREMIUM</a></h1>
+
+		<div id="dialog" title="INFORMATIONS">
+				<nav>
+					<ul>
+						<li><a href="">Mentions légales</a></li>
+						<li><a href="">Conditions d'utilisation</a></li>
+						<li><a href="">Contactez-nous</a></li>
+					</ul>
+				</nav>
+		</div>
+
+		<footer>
+			<div class="informations" id="opener">
+				<img class="mini" src="images/logos-n-icons/mini.png" title="INFORMATIONS" onmouseover="this.src='images/logos-n-icons/minigif.gif';" onmouseout="this.src='images/logos-n-icons/mini.png';"></a>
+			</div>
+			<div class="reseaux">
+				<a href="https://www.facebook.com" title="Facebook" style="text-decoration: none;">
+					<img style="width:50px; height:50px;" src="images/fb.png" alt="Facebook" 
+					onmouseover="this.src='images/fbhover.png';" onmouseout="this.src='images/fb.png';">
+				</a>
+				<a href="https://twitter.com" title="Twitter" style="text-decoration: none;">
+					<img style="width:50px; height:50px;" src="images/twitter.png" alt="Twitter" 
+					onmouseover="this.src='images/twitterhover.png';" onmouseout="this.src='images/twitter.png';">
+				</a>
+				<a href="https://www.whatsapp.com" title="WhatsApp" style="text-decoration: none;">
+					<img style="width:50px; height:50px;" src="images/whatsapp.png" alt="WhatsApp" 
+					onmouseover="this.src='images/whatsapphover.png';" onmouseout="this.src='images/whatsapp.png';">
+				</a>
+				<a href="https://www.youtube.com" title="YouTube" style="text-decoration: none;">
+					<img style="width:50px; height:50px;" src="images/yt.png" alt="YouTube" 
+					onmouseover="this.src='images/ythover.png';" onmouseout="this.src='images/yt.png';">
+				</a>
+				<a href="https://www.instagram.com" title="Instagram" style="text-decoration: none;">
+					<img style="width:50px; height:50px;" src="images/insta.png" alt="Instagram" 
+					onmouseover="this.src='images/instahover.png';" onmouseout="this.src='images/insta.png';">
+				</a>
+				<a href="https://linkedin.com" title="LinkedIn" style="text-decoration: none;">
+					<img style="width:50px; height:50px;" src="images/linkedin.png" alt="LinkedIn" 
+					onmouseover="this.src='images/linkedinhover.png';" onmouseout="this.src='images/linkedin.png';">
+				</a>
+			</div>
+		</footer>
+	</body>
+	</html>
